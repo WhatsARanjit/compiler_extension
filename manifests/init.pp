@@ -1,8 +1,9 @@
 class compiler_extension (
-  $ca       = $::settings::server,
-  $console  = $::settings::server,
-  $puppetdb = $::settings::server,
+  $ca        = $::settings::server,
   $compilers = [ $::settings::server ],
+  $console   = $::settings::server,
+  $master    = $::settings::server,
+  $puppetdb  = $::settings::server,
 ) {
   if $::settings::certname == $console {
     include ::compiler_extension::conf::console

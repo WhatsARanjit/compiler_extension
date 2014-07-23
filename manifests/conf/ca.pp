@@ -7,20 +7,12 @@ class compiler_extension::conf::ca (
     path    => $::settings::config,
     section => 'agent',
   }
-  @@ini_setting { 'Puppet MOM':
+  ini_setting { "Puppet CA ${::settings::certname} uses ${server} as master":
     setting => 'server',
     value   => $server,
-    tag     => 'compiler_extension_conf_agent',
   }
-  @@ini_setting { 'Puppet CA Server':
+  ini_setting { "Puppet CA ${::settings::certname} uses ${ca_server} as CA":
     setting => 'ca_server',
     value   => $ca_server,
-    tag     => 'compiler_extension_conf_agent',
-  }
-  @@ini_setting { 'Puppet CA function':
-    setting => 'ca',
-    value   => 'false',
-    section => 'main',
-    tag     => 'compiler_extension_conf_compiler',
   }
 }
