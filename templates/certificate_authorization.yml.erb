@@ -1,6 +1,7 @@
-<%= @console %>:
-  role: read-write
+---
+  <%= @console %>:
+    role: read-write
 <% @compilers.each do |compiler| -%>
-<%= compiler %>:
-  role: read-write
+  <%= compiler %>:
+    role: read-write
 <% end -%>

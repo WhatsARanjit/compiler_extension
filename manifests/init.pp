@@ -14,9 +14,9 @@ class compiler_extension (
   if $::settings::certname == $ca {
     include ::compiler_extension::conf::ca
   }
-  if $::settings::certname in $compilers {
-    include ::compiler_extension::conf::compiler
-  }
+  #if $::settings::certname in $compilers {
+  #  include ::compiler_extension::conf::compiler
+  #}
   include ::compiler_extension::conf::agent
 }
 

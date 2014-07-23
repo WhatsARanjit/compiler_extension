@@ -14,6 +14,5 @@ class compiler_extension::conf::console (
     group   => $console_group,
     mode    => '0644',
     content => template("${module_name}/certificate_authorization.yml.erb"),
-    notify  => Service['pe-httpd'],
   }
 }

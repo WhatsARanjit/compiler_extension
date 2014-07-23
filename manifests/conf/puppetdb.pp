@@ -13,7 +13,6 @@ class compiler_extension::conf::puppetdb (
     owner   => $puppetdb_user,
     group   => $puppetdb_group,
     mode    => '0600',
-    content => template("${module_name}/certificate_authorization.yml.erb"),
-    notify  => Service['pe-httpd'],
+    content => template("${module_name}/certificate-whitelist.erb"),
   }
 }
