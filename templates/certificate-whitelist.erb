@@ -1,6 +1,12 @@
-<%= @ca %>
 <%= @console %>
+<% if @puppetdb != @console -%>
+<%= @ca %>
+<% end -%>
+<% if @puppetdb != @console -%>
 <%= @puppetdb %>
+<% end -%>
 <% @compilers.each do |compiler| -%>
+<% if compiler != ( @console or @puppetdb ) -%>
 <%= compiler %>
+<% end -%>
 <% end -%>

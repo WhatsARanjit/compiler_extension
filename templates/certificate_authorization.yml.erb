@@ -1,9 +1,13 @@
 ---
   <%= @console %>:
     role: read-write
+<% if @puppetdb != @console -%>
   <%= @puppetdb %>:
     role: read-write
+<% end -%>
 <% @compilers.each do |compiler| -%>
+<% if compiler != ( @console or @puppetdb ) -%>
   <%= compiler %>:
     role: read-write
+<% end -%>
 <% end -%>
