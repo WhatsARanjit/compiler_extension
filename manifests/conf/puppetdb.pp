@@ -3,6 +3,8 @@ class compiler_extension::conf::puppetdb (
   $compilers          = $::compiler_extension::compilers,
   $console            = $::compiler_extension::console,
   $puppetdb_auth_file = '/etc/puppetlabs/puppetdb/certificate-whitelist',
+  $puppetdb_jetty     = '/etc/puppetlabs/puppetdb/conf.d/jetty.ini',
+  $puppetdb_ip        = $::ipaddress,
   $puppetdb_group     = 'pe-puppetdb',
   $puppetdb_user      = 'pe-puppetdb',
   $puppetdb           = $::compiler_extension::puppetdb,

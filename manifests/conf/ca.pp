@@ -19,6 +19,6 @@ class compiler_extension::conf::ca (
   @@file { "Puppet CA ${::clientcert} CRL":
     ensure  => file,
     content => file($cacrl),
-    tag     => ['compiler_extension-cacrl'],
+    tag     => 'compiler_extension-cacrl',
   }
 }
