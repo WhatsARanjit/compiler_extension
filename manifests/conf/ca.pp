@@ -1,6 +1,6 @@
 class compiler_extension::conf::ca (
-  $server    = $::settings::certname,
-  $ca_server = $::settings::certname,
+  $server    = $::compiler_extension::ca,
+  $ca_server = $::compiler_extension::ca,
 ) {
   Ini_setting {
     ensure  => present,

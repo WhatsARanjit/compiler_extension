@@ -5,13 +5,13 @@ class compiler_extension (
   $master    = $::settings::server,
   $puppetdb  = $::settings::server,
 ) {
-  if $::settings::certname == $console {
+  if $::clientcert == $console {
     include ::compiler_extension::conf::console
   }
-  if $::settings::certname == $puppetdb {
+  if $::clientcert == $puppetdb {
     include ::compiler_extension::conf::puppetdb
   }
-  if $::settings::certname == $ca {
+  if $::clientcert == $ca {
     include ::compiler_extension::conf::ca
   }
   #if $::settings::certname in $compilers {
