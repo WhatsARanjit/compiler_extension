@@ -8,19 +8,19 @@ class compiler_extension::conf::ca (
     section => 'agent',
   }
   @@ini_setting { 'Puppet MOM':
-    value   => 'server',
-    setting => $server,
-    tag     => ['compiler_extension_conf_agent'],
+    setting => 'server',
+    value   => $server,
+    tag     => 'compiler_extension_conf_agent',
   }
   @@ini_setting { 'Puppet CA Server':
-    value   => 'ca_server',
-    setting => $ca_server,
-    tag     => ['compiler_extension_conf_agent'],
+    setting => 'ca_server',
+    value   => $ca_server,
+    tag     => 'compiler_extension_conf_agent',
   }
   @@ini_setting { 'Puppet CA function':
-    value   => 'ca',
-    setting => 'false',
+    setting => 'ca',
+    value   => 'false',
     section => 'main',
-    tag     => ['compiler_extension_conf_compiler'],
+    tag     => 'compiler_extension_conf_compiler',
   }
 }
