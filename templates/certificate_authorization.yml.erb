@@ -1,12 +1,16 @@
 ---
   <%= @console %>:
     role: read-write
-<% if @puppetdb != @console -%>
+<% if @ca != ( @console or @puppetdb ) -%>
+  <%= @ca %>:
+    role: read-write
+<% end -%>
+<% if @puppetdb != ( @console or @ca ) -%>
   <%= @puppetdb %>:
     role: read-write
 <% end -%>
 <% @compilers.each do |compiler| -%>
-<% if compiler != ( @console or @puppetdb ) -%>
+<% if compiler != ( @console or @ca or @puppetdb ) -%>
   <%= compiler %>:
     role: read-write
 <% end -%>
