@@ -8,8 +8,10 @@ class compiler_extension::conf::compiler (
   @@yaml_setting { "${::settings::certname} console whitelist entry":
     target => '/etc/puppetlabs/console-auth/certificate_authorization.yml',
     key    => "${::settings::certname}/role",
-    value  => 'read-write1',
+    value  => 'read-write',
     tag    => 'compiler_extension_conf_console',
   }
   Ini_setting <<| tag == 'compiler_extension_conf_compiler' |>>
+  @@notify { $::fqdn: }
+  Notify <<| |>>
 }
